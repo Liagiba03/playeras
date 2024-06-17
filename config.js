@@ -5,5 +5,5 @@ module.exports = {
     DB_PASSWORD: process.env.DB_PASSWORD || "SusSand#",
     DB_NAME: process.env.DB_NAME || "negocio",
     DB_PORT : process.env.DB_PORT || 3306,
-    ORIGIN: process.env.DB_ORIGIN || "http://localhost:3000"
+    ORIGIN: process.env.ORIGIN || "http://localhost:3000"
   };
