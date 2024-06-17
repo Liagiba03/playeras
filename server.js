@@ -58,6 +58,15 @@ const db = mysql.createConnection({
     database : DB_NAME
 })
 
+//Comprobar conexion
+db.connect((err) => {
+    if (err) {
+        console.error('Database connection failed: ', err.stack);
+        return;
+    }
+    console.log('Connected to database.');
+});
+
 //Para home admin init
 app.get('/', (req, res)=>{
     if(req.session.IdRol){
