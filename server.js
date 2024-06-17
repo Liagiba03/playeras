@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const multer = require('multer');
 const fs = require('fs');
 const { Console } = require('console')
-const {PORT,DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, ORIGIN, DB_USER} = require('./config.js');
+const {PORT,DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, ORIGIN, DB_USER, MYSQL_PRIVATE_URL} = require('./config.js');
 //import {PORT} from './config.js'
 
 const salt =10;
@@ -50,13 +50,15 @@ const upload = multer({
 
 //const port = 5000
 
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host : DB_HOST,
     user : DB_USER,
     password : DB_PASSWORD,
     port: DB_PORT,
     database : DB_NAME
-})
+})*/
+
+const db = mysql.createConnection(MYSQL_PRIVATE_URL);
 
 //Comprobar conexion
 db.connect((err) => {
