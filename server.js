@@ -15,7 +15,7 @@ const {PORT, MYSQL_PRIVATE_URL} = require('./config.js');
 const salt =10;
 const app = express()
 app.use(cors({
-    origin: ['https://kitsune-negocio.netlify.app'],
+    origin: 'https://kitsune-negocio.netlify.app',
     methods: ["POST", "GET", "DELETE"],
     credentials: true
 }))
