@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql = require('mysql2')
+const mysql = require('mysql')
 const cors = require('cors')
 const path = require('path')
 const session = require('express-session')
@@ -35,6 +35,8 @@ app.use(session({
         sameSite: 'None'
     }
 }))
+
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
