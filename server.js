@@ -53,15 +53,15 @@ const upload = multer({
 
 //const port = 5000
 
-/*const db = mysql.createConnection({
+const db = mysql.createConnection({
     host : DB_HOST,
     user : DB_USER,
     password : DB_PASSWORD,
     port: DB_PORT,
     database : DB_NAME
-})*/
+})
 
-const db = mysql.createConnection(MYSQL_PRIVATE_URL);
+//const db = mysql.createConnection(MYSQL_PRIVATE_URL);
 
 //Comprobar conexion
 db.connect((err) => {
