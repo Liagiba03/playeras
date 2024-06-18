@@ -139,11 +139,17 @@ app.post('/registrar', (req,res) =>{
 
 
 //Para cerrar sesion init
-app.get('/close', (req, res) =>{
-    req.session.destroy();
-    return res.json("success");
-})
+app.get('/close', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).json({error: 'Failed to destroy session'});
+        }
+        res.clearCookie('connect.sid'); // Limpia la cookie de sesión
+        return res.json({status: 'success'});
+    });
+});
 //Para cerrar sesion end
+
 
 //Consultar tipo init 
 app.get('/tipo', (req, res) =>{
