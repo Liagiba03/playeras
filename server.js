@@ -9,18 +9,18 @@ const bcrypt = require('bcrypt');
 const multer = require('multer');
 const fs = require('fs');
 const { Console } = require('console')
-const {PORT,DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, ORIGIN, DB_USER, MYSQL_PRIVATE_URL} = require('./config.js');
+const {PORT, MYSQL_PRIVATE_URL} = require('./config.js');
 //import {PORT} from './config.js'
 
 const salt =10;
 const app = express()
-
-app.use(express.static(path.join(__dirname, "public")))
 app.use(cors({
     origin: ['https://kitsune-negocio.netlify.app'],
     methods: ["POST", "GET", "DELETE"],
     credentials: true
 }))
+
+app.use(express.static(path.join(__dirname, "public")))
 app.use(express.json({ limit: '16mb' }));
 app.use(express.urlencoded({ limit: '16mb', extended: true }));
 app.use(cookieParser())
