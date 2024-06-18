@@ -17,7 +17,7 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, "public")))
 app.use(cors({
-    origin: [ORIGIN],
+    origin: [`${ORIGIN}`],
     methods: ["POST", "GET", "DELETE"],
     credentials: true
 }))
