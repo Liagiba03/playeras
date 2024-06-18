@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const multer = require('multer');
 const fs = require('fs');
 const { Console } = require('console')
-const {PORT, MYSQL_PRIVATE_URL} = require('./config.js');
+const {PORT, MYSQL_PRIVATE_URL, DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER} = require('./config.js');
 //import {PORT} from './config.js'
 
 const salt =10;
