@@ -18,7 +18,7 @@ app.use(cors({
     origin: 'https://kitsune-negocio.netlify.app',
     methods: ["POST", "GET", "DELETE"],
     credentials: true
-}))
+}));
 
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.json({ limit: '16mb' }));
